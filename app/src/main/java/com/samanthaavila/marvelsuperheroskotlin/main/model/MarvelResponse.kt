@@ -1,4 +1,4 @@
-package com.samanthaavila.marvelsuperheroskotlin.model
+package com.samanthaavila.marvelsuperheroskotlin.main.model
 
 data class MarvelResponse (
     val code: Int,
