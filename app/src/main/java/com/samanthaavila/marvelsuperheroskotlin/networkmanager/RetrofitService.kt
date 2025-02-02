@@ -5,21 +5,18 @@ import retrofit2.Retrofit
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-class RetrofitService {
-    @GET("users")
-    suspend fun getUsers()
+interface RetrofitService {
     @GET("v1/public/characters")
     suspend fun getMarvels(@Query("apikey") apiKey: String): MarvelResponse
+}
 
-    object RetrofitServiceFactory {
-        fun makeRetrofitService(): RetrofitService {
-            return Retrofit.Builder()
-                .baseUrl("http://gateway.marvel.com")
-                //.addConverterFactory(GsonConvertFactory.create())
-                .build()
-                .create(RetrofitService::class.java)
-
-        }
+object RetrofitServiceFactory {
+    fun makeRetrofitService(): RetrofitService {
+        return Retrofit.Builder()
+            .baseUrl("http://gateway.marvel.com")
+            //.addConverterFactory(GsonConvertFactory.create())
+            .build()
+            .create(RetrofitService::class.java)
 
     }
 
