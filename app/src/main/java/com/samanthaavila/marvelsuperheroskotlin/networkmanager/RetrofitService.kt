@@ -21,7 +21,6 @@ object RetrofitServiceFactory {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RetrofitService::class.java)
-
     }
 //    https://gateway.marvel.com/v1/public/characters?ts=1&apikey=c51ad311d4800ee7e959e4cb34f929b8&hash=0a96e3bd6d9eb58e31998051c1c686ca
 }
